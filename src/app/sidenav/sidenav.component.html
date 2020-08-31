@@ -1,0 +1,12 @@
+<div id="main-section-sidenav">
+    <div
+    [id]="'sidebar-' + tab.title.toLowerCase()"
+    *ngFor="let tab of sideNavTabs"
+    (mouseenter)="tab.highlighted = true"
+    (mouseleave)="tab.highlighted = false"
+    [class.tab-highlight]="tab.highlighted"
+    (click)="navigate(tab.title)">
+        <div class="sidenav-bar-header" [class.tab-select]="tab.selected"><i [ngClass]="tab.icon"></i></div>
+        <div class="sidenav-bar-body"><h4>{{tab.title}}</h4></div>
+    </div>
+</div>

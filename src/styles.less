@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+/* Numbers */
+@main-section-margin-top: 120px;
+@main-section-margin-bottom: 150px;
+@home-header-height-s-m: 156px;
+@home-header-height-l-xl: 220px;
+@normal-header-height: 156px;
+@normal-header-topbar-height: 1em;
+@sidenav-xtra-margin-top: 32px;
+@body-padding-l-xl: 64px;
+@body-padding-s-m: 32px;
+@sidenav-appendage-width: 42px;
+@sidenav-bar-width: 200px;
+@sidenav-bar-height: 112px;
+@page-transition-length: 0.6s;
+@open-image-transition-length: 0.3s; // Be sure to change corresponding value at the top of image.component.ts
+@pullout-nav-width: 75%; // Be sure to change corresponding value near the bottom of pullout-nav.component.js too
+@pullout-nav-tab-width: 22px;
+@pullout-nav-tab-height: 64px;
+
+/* Breakpoints (minimum widths of screen size) */
+@breakpoint-xl: 1366px; // iPad Pro landscape
+@breakpoint-l: 1024px; // iPad Pro portrait / iPad landscape
+@breakpoint-m: 768px; // iPad portrait
+// Anything smaller is "s"
+
+/* Colors */
+@main-section-body-color: white;
+@site-color: #819b9f;// I like this color and I don't want to get sick of seeing it
+//@site-color: #557cd8;
+@sidenav-bar-color: white;
+@sidenav-appendage-color: #f3f3f3;
+@pullout-nav-highlight-color: #e3e3e3;
+@p-color: #656565;
+@caption-color: #888888;
+
+/* Fonts */
+@header-font: "Secular One";
+@p-font: "Montserrat";
+@p-size-s-m: 14pt;
+@p-size-l-xl: 18pt;
+@caption-size: 12pt;
+@title-size-s: 32pt;
+@title-size-m: 48pt;
+@title-size-l: 56pt;
+@title-size-xl: 64pt;
+// Styling is different on s and doesn't need line-height
+@title-lineheight-m: 28pt;
+@title-lineheight-l: 32pt;
+@title-lineheight-xl: 36pt;
+
+/* Other */
+@animation-bezier: cubic-bezier(0.34, 0, 0.16, 1);
+
+html {
+    overflow-x: hidden; // So the page doesn't drag left and right when you're pulling out the navigation on mobile
+    scroll-behavior: smooth;
+
+    // filter: drop-shadow(25px 25px 5px #262626);
+    // -webkit-filter: drop-shadow(25px 25px 5px #262626);
+
+    // backface-visibility: hidden;
+    // -webkit-backface-visibility: hidden;
+    // -moz-backface-visibility: hidden;
+}
+
+body {
+    background-color: @main-section-body-color;
+    margin: 0;
+}
+
+::selection {
+    background-color: #819b9f;
+    color: white;
+}
+
+p {
+    font-family: @p-font;
+    color: @p-color;
+    font-size: @p-size-s-m;
+    margin-block-start: 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: @site-color;
+    font-family: @header-font;
+    font-size: 28pt;
+    margin-block-end: 0;
+}
+
+h3 {
+    color: @p-color;
+    font-family: @p-font;
+    font-size: 20pt;
+    margin-block-end: 0;
+}
+
+a {
+    color: @p-color;
+}
+
+@media (min-width: @breakpoint-m) {
+    body {
+        background-color: #444444;
+    }
+    h2 {
+        font-size: 32pt;
+    }
+    h3 {
+        font-size: 22pt;
+    }
+}
+
+@media (min-width: @breakpoint-l) {
+    p {
+        font-size: @p-size-l-xl;
+    }
+}

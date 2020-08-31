@@ -1,0 +1,13 @@
+<div id="main-section-header" #headerRef>
+    <h1>Junior Mints</h1>
+</div>
+<div id="main-section-body" #bodyRef>
+    <!-- NOTE: I tried doing *ngIf on the following p tag.  It messes up the the transition, since it appears a second or two after openAnim() is called. -->
+    <p [innerHTML]="textFromBackend"></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula ligula vel quam dignissim, nec scelerisque augue eleifend. Aenean mollis scelerisque malesuada. Vivamus mattis urna et interdum commodo. Vivamus sit amet posuere erat. Nullam non erat pulvinar, commodo lectus eu, aliquam magna. Sed iaculis nunc augue, in commodo leo sagittis at. Praesent lacinia mauris orci, faucibus sollicitudin libero blandit ut. Suspendisse dignissim metus quam, vitae molestie ligula tempor et. Suspendisse in euismod sapien. Sed orci massa, scelerisque et libero a, molestie placerat neque. Sed varius erat at nibh bibendum rhoncus. Vivamus porttitor lorem mi, quis dignissim nisi porta sed. Nam augue purus, finibus non imperdiet ut, eleifend sed diam. Fusce varius molestie ex, sed gravida quam convallis in.</p>
+    <p>Phasellus molestie nunc eget ornare vestibulum. Suspendisse potenti. Mauris vitae lacus luctus, luctus augue nec, consequat quam. Cras in cursus purus. In mollis id turpis id fermentum. Vivamus commodo felis diam, nec facilisis lorem elementum non. Aliquam pretium, eros ultrices rhoncus auctor, massa dolor vehicula libero, at dictum diam massa sit amet tellus. Vestibulum a euismod velit. Suspendisse sapien enim, egestas ut dolor non, facilisis faucibus mauris. In nec congue elit. In hac habitasse platea dictumst. Nulla facilisi.</p>
+    <app-image
+    imgSrc="assets/carpet.jpg"
+    captionText="This is a picture of some carpet on some stairs"></app-image>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula ligula vel quam dignissim, nec scelerisque augue eleifend. Aenean mollis scelerisque malesuada. Vivamus mattis urna et interdum commodo. Vivamus sit amet posuere erat. Nullam non erat pulvinar, commodo lectus eu, aliquam magna. Sed iaculis nunc augue, in commodo leo sagittis at. Praesent lacinia mauris orci, faucibus sollicitudin libero blandit ut. Suspendisse dignissim metus quam, vitae molestie ligula tempor et. Suspendisse in euismod sapien. Sed orci massa, scelerisque et libero a, molestie placerat neque. Sed varius erat at nibh bibendum rhoncus. Vivamus porttitor lorem mi, quis dignissim nisi porta sed. Nam augue purus, finibus non imperdiet ut, eleifend sed diam. Fusce varius molestie ex, sed gravida quam convallis in.</p>
+</div>

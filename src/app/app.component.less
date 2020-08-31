@@ -1,0 +1,49 @@
+@import "src/styles.less";
+
+// Small screen sizes
+#touch-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#main-section {
+    margin: 0;
+    width: auto;
+}
+
+#sidenav {
+    display: none;
+}
+
+// Medium screen sizes
+@media (min-width: @breakpoint-m) {
+    #main-section {
+        margin: @main-section-margin-top auto @main-section-margin-bottom auto;
+        width: 80%;
+        position: relative;
+        z-index: 10;
+    }
+    #sidenav {
+        position: fixed;
+        display: initial;
+        top: 40%;
+        left: 100%;
+        z-index: 20;
+    }
+}
+
+// X-Large screen sizes
+@media (min-width: @breakpoint-xl) {
+    #main-section {
+        width: 60%;
+    }
+    #sidenav {
+        position: absolute;
+        top: @main-section-margin-top + @home-header-height-l-xl + @sidenav-xtra-margin-top;
+        left: 80%;
+        z-index: 0;
+    }
+}
+
+/* A font I really liked for <p> was 'Neue Haas' */

@@ -1,0 +1,24 @@
+<div
+#imgBlackout
+class="blackout"
+id="image-blackout"
+(click)="closeImage()"></div>
+
+<div class="img-container" (window:resize)="windowResize()">
+    <div #placeHolder></div>
+    
+    <img
+    #imgNormal
+    class="img-normal"
+    [src]="imgSrc"
+    (click)="openImage()"
+    (window:resize)="checkClickability()"/>
+
+    <img
+    #imgZoomed
+    style="visibility: hidden;"
+    class="img-zoomed"
+    [src]="imgSrc"
+    (click)="closeImage()"/>
+</div>
+<p *ngIf="captionText">{{captionText}}</p>

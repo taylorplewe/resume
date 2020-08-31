@@ -1,0 +1,18 @@
+<div id="pullout-blackout"></div>
+<div id="pullout-pane" (window:resize)="togglePullout('close')">
+    <div
+    class="nav-option"
+    *ngFor="let tab of navTabs"
+    (mouseenter)="tab.highlighted = true"
+    (mouseleave)="tab.highlighted = false"
+    [class.tab-highlight]="tab.highlighted"
+    [class.tab-select]="tab.selected"
+    (click)="navigate(tab.title);">
+        <div style="width: 24px;"><i [ngClass]="tab.icon"></i></div>&nbsp;&nbsp;<h4>{{tab.title}}</h4>
+    </div>
+    <div id="pullout-tab" (click)="togglePullout('toggle')">
+        <svg id="pullout-tab-caret" height="12" width="6" xmlns="http://www.w3.org/2000/svg">
+            <polygon id="pullout-tab-caret-polygon" points="0,0 6,6 0,12" />
+        </svg>
+    </div>
+</div>

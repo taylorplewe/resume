@@ -1,0 +1,67 @@
+@import "src/styles.less";
+
+#pullout-blackout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    z-index: 20; // In front of main page; behind image blackout (when you tap on an image)
+}
+
+#pullout-pane {
+    filter: none !important;
+    position: fixed;
+    top: 0;
+    left: @pullout-nav-width * -1;
+    width: @pullout-nav-width;
+    height: 100%;
+    background-color: white;
+    color: black;
+    z-index: 30; // Still behind image blackout
+    & .nav-option {
+        color: @site-color;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        padding: @body-padding-s-m 0 @body-padding-s-m @body-padding-s-m;
+        cursor: pointer;
+        &:hover {
+            background-color: @pullout-nav-highlight-color;
+        }
+        &.tab-select {
+            background-color: @site-color;
+            color: white;
+        }
+    }
+}
+
+#pullout-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - (@pullout-nav-tab-height / 2));
+    left: calc(100% - (@pullout-nav-tab-width)); // This one is for the opening animation where it pops out
+    width: @pullout-nav-tab-width;
+    height: @pullout-nav-tab-height;
+    background-color: @sidenav-appendage-color;
+    cursor: pointer;
+    transition:
+        left 0.8s @animation-bezier;
+    &:hover {
+        background-color: @pullout-nav-highlight-color;
+    }
+}
+
+#pullout-tab-caret-polygon {
+    fill: @p-color;
+}
+
+h4 {
+    font-family: @header-font;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}

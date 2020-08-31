@@ -1,0 +1,12 @@
+<div id="main-section">
+    <!-- I am changing from one page component to another dynamically.  It's easier to work with transitions that way. -->
+    <ng-template pageRef></ng-template>
+</div>
+
+<div id="main-nav" (window:resize)="checkScreenSize()">
+    <!-- Side navigation appears on most medium to large screens -->
+    <app-sidenav *ngIf="displaySidenav" id="sidenav" [selectedTab]="currentPage" (onNavigate)="navigate($event)"></app-sidenav>
+
+    <!-- Pullout navigation from the left on small screens -->
+    <app-pullout-nav *ngIf="!displaySidenav" id="pullout-nav" [selectedTab]="currentPage" (onNavigate)="navigate($event)"></app-pullout-nav>
+</div>
