@@ -36,9 +36,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
         // Get website content data from my MongoDB database, using my getDataService
-        this.getDataService.getTestText().subscribe(
-            result => { this.updateBackendTextOnMePage(result["data"]); }
-        );
+        // this.getDataService.getTestText().subscribe(
+        //     result => { this.updateBackendTextOnMePage(result["data"]); }
+        // );
 
         // Home page
         this.currentPageComp = this.changePage(this.pages[this.currentPage]);
@@ -76,7 +76,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
         if (this.currentPage != data["page"]) {
             this.currentPageComp.instance.closeAnim(true);
-            window.scrollTo(0, 0);
+            //window.scrollTo(0, 0);
 
             // Allow the current page's close animation to run before changing page components
             setTimeout(() => {
@@ -87,7 +87,7 @@ export class AppComponent implements OnInit, AfterViewInit {
                 // else this.checkScreenSize();
                 if (this.currentPage == "Me") {
                     this.checkScreenSize(); // The Me page needs to know whether the header is big (L and XL screens) or small (S or M screens) when it's created
-                    this.updateBackendTextOnMePage();
+                    //this.updateBackendTextOnMePage();
                 }
                 this.currentPageComp.instance.openAnim();
             }, timeoutLength);
