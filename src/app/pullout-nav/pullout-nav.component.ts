@@ -56,6 +56,7 @@ export class PulloutNavComponent implements OnInit, AfterViewInit {
   }
 
   navigate(page : string) {
+    window.scrollTo(0, 0);
     setTimeout(() => {this.togglePullout("close")}, 200);
     this.selectTab(page);
     this.onNavigate.emit({ page : page });
